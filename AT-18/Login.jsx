@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Helmet, Button } from "../Common";
+import { Helmet, Button } from "./Common";
 import GoogleButton from "react-google-button";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";

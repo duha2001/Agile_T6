@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import Helmet from "./Helmet";
 import { Link, useNavigate } from "react-router-dom";
-import { Button } from "../Common";
+import { Button, Helmet } from "./Common";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 

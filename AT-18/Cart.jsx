@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
-import { numberWithCommas, Helmet, Banner, Button, CartItem } from "../Common";
+import { numberWithCommas, Helmet, Banner, Button, CartItem } from "./Common";
 const Cart = (props) => {
   const { datas, getCartItemDetails } = props;
   const carts = useSelector((state) => state.cart.carts);
