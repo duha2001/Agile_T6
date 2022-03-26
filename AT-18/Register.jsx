@@ -1,34 +1,16 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button, Helmet } from "./Common";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
 
 const Register = () => {
-  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
-  const initState = {
-    name: email,
-    password: password,
-    confirmpassword: confirmpassword,
-    loading: false,
-    errors: [],
-  };
-  const signUp = () => {
-    return createUserWithEmailAndPassword(auth, email, password);
-  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-    try {
-      await signUp(email, password);
-      navigate("/login");
-    } catch (error) {
-      setError(error.message);
-    }
   };
   return (
     <Helmet title="Đăng ký">

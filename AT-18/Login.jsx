@@ -1,17 +1,13 @@
 import React, { useState, useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Helmet, Button } from "./Common";
 import GoogleButton from "react-google-button";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const refInputEmail = useRef(null);
   const refInputPassword = useRef(null);
-  const navigate = useNavigate();
-  const signIn = () => signInWithEmailAndPassword(auth, email, password);
   const handleSubmit = async (e) => {
     setError("");
     e.preventDefault();
@@ -21,12 +17,6 @@ const Login = () => {
         : refInputPassword.current.focus();
     } else {
       setError("");
-      try {
-        await signIn(auth, email, password);
-        navigate("/");
-      } catch (error) {
-        setError(error);
-      }
     }
   };
   const handleGoogleSignIn = () => {};

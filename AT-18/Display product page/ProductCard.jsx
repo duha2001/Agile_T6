@@ -1,40 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../firebase";
-import { onAuthStateChanged } from "firebase/auth";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Rating, numberWithCommas } from "../Common";
-import { addCart } from "../redux/cartItemSlice";
 const ProductCard = (props) => {
   const { data } = props;
-  const [user, setUser] = useState("");
   const [isAdded, setAdded] = useState(false);
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const handleAdd = (e) => {
-    e.preventDefault();
-    if (user) {
-      setAdded(true);
-      const newItems = {
-        title: data.title,
-        description: data.description,
-        price: data.price,
-        image: data.image,
-      };
-      dispatch(addCart(newItems));
-    } else if (!user) {
-      alert("Please login account!");
-      navigate("/login");
-    }
+  const handleAdded = () => {
+    setAdded(!isAdded);
   };
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
-      setUser(currentuser);
-    });
-    return () => {
-      unsubscribe();
-    };
-  }, []);
 
   return (
     <div className="product__card">
@@ -60,12 +32,12 @@ const ProductCard = (props) => {
           </div>
           <div className="product__card__canvas"></div>
           {isAdded === false ? (
-            <button onClick={handleAdd} className="product__card__btn">
+            <button onClick={handleAdded} className="product__card__btn">
               ADD TO CARD
             </button>
           ) : (
             <button
-              onClick={handleAdd}
+              onClick={handleAdded}
               className="product__card__btn product__card__btn__disable"
             >
               ADDED

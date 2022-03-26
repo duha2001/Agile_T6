@@ -32,7 +32,8 @@ const Cart = (props) => {
           <div className="cart__list">
             {cartProduct.length ? (
               cartProduct.map((item, index) => (
-                <CartItem key={index} item={item} />
+                <p>Handle Khi có sản phẩm</p>
+                // <CartItem key={index} item={item} />
               ))
             ) : (
               <img
