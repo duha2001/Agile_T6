@@ -4,11 +4,9 @@ export { default as Slider } from "../components/Slider";
 export { default as Banner } from "../Support Page/Banner";
 export { default as Grid } from "../Support Page/Grid";
 export { default as Button } from "../Support Page/Button";
-export { default as ContactIcon } from "../components/ContactIcon";
+export { default as CartItem } from "../Support Page/CartItem";
 export { default as ProductCart } from "../Display product page/ProductCard";
 export { default as ProductHandle } from "../Display product page/ProductHandle";
-export { default as ProductView } from "../components/ProductView";
-export { default as PolicyProductView } from "../components/PolicyProductView";
 export {
   default as Section,
   SectionBody,
