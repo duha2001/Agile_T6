@@ -1,0 +1,35 @@
+*,
+:after,
+::before {
+  padding: 0;
+  box-sizing: border-box;
+  background-color: antiquewhite;
+}
+.container {
+  height: 100%;
+}
+.chart {
+  height: 100%;
+  overflow: hidden;
+}
+.chart-view {
+  width: 50%;
+}
+button {
+  border: none;
+  font-size: 1.125rem;
+  padding: 4px 6px;
+  color: red;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.8;
+}
+select {
+  cursor: pointer;
+  outline: none;
+  font-size: 1rem;
+  border-radius: 3px;
+  align-items: center;
+  text-align: center;
+}

@@ -1,0 +1,15 @@
+.d-flex {
+  display: flex;
+  transition: all 0.2s;
+}
+.d-flex a {
+  text-decoration: none;
+  font-size: 1.125rem;
+}
+.d-flex :hover {
+  color: red;
+  transition: all 0.2s;
+}
+.flex-dec {
+  flex-direction: column;
+}
